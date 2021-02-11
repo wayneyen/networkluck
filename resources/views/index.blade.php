@@ -12,7 +12,7 @@
 
 <body class="text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
   {{-- 導航條 --}}
-  <header class="w-full">
+  <header class="sticky w-full bg-white dark:bg-gray-800 z-40 left-0 top-0">
     <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
       <div class="py-6 flex flex-row items-center justify-between">
         <a href="{{ route('index') }}" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white focus:outline-none">
@@ -25,8 +25,8 @@
         </button>
       </div>
       <nav :class="{ 'flex': open, 'hidden': !open }" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-        <a href="#" class="nav-item">服務優勢</a>
-        <a href="#" class="nav-item">精選案例</a>
+        <a href="#service" class="nav-item">服務優勢</a>
+        <a href="#case" class="nav-item">精選案例</a>
         <a href="#" class="nav-item">優惠價格</a>
         <a href="#" class="nav-item">聯絡我們</a>
       </nav>
@@ -44,7 +44,8 @@
   </section>
 
   {{-- 服務優勢 --}}
-  <section class="max-w-screen-lg mx-auto my-12 px-4">
+  <a name="service"></a>
+  <section class="max-w-screen-lg mx-auto my-12 px-4 mt-24">
     <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold mb-4">
       <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運服務優勢
     </div>
@@ -70,7 +71,8 @@
   </section>
 
   {{-- 精選案例 --}}
-  <section class="bg-gray-100 dark:bg-gray-600">
+  <a name="case"></a>
+  <section class="bg-gray-100 dark:bg-gray-600 mt-24">
     <div class="max-w-screen-lg mx-auto py-12 px-4">
       <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold mb-4">
         <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運精選案例
@@ -118,30 +120,11 @@
     </div>
   </section>
 
-  <button type="button" id="switchTheme">
-    switchTheme
-  </button>
+  <div class="fixed right-2 bottom-2 opacity-80">
+    <a href="javascript: switchTheme()"><x-heroicon-s-light-bulb id="themeSwitcher" class="text-gray-400 mb-1 w-12 h-12" /></a>
+    <a href="#"><x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
+  </div>
 
   <script src="{{ mix('js/app.js') }}"></script>
-
-  <script>
-    (function() {
-
-
-    })()
-
-    document.getElementById('switchTheme').addEventListener('click', function() {
-        let htmlClasses = document.querySelector('html').classList;
-        if(localStorage.theme == 'dark') {
-            htmlClasses.remove('dark');
-            localStorage.removeItem('theme')
-        } else {
-            htmlClasses.add('dark');
-            localStorage.theme = 'dark';
-        }
-    });
-
-    console.log(localStorage.theme)
-  </script>
 </body>
 </html>
