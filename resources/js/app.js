@@ -42,7 +42,7 @@ window.menu = () => {
           left: 0,
           behavior: 'smooth'
         })
-        window.history.replaceState('', '', '#' + dom)
+        window.history.pushState('', '', '#' + dom)
       } else {
         this.open = false
         this.$nextTick(() => { location.href = '#' + dom })

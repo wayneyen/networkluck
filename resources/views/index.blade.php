@@ -138,9 +138,9 @@
       <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運優惠價格
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
       <div>
-        <div class="mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
+        <div class="lg:mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
           <div class="px-4 py-8 text-blue-600">
             <h3 class="mx-auto font-semibold text-center underline leading-relaxed">
               基礎型
@@ -185,17 +185,17 @@
       </div>
 
       <div>
-        <div class="mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
+        <div class="lg:mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
           <div class="px-4 py-8 text-blue-600">
             <h3 class="mx-auto font-semibold text-center underline leading-relaxed">
               進階型
             </h3>
-            <p class="text-3xl font-bold text-center mt-3 text-red-400">
+            <p class="text-3xl font-bold text-center mt-3 text-yellow-500	">
               價格優惠中
             </p>
           </div>
           <div class="bg-blue-500 text-white py-6 text-center">
-            <a href="#" class="text-2xl inline-block text-red-100">查看詳細優惠</a>
+            <a href="#calc" class="text-2xl inline-block text-white">查看多項優惠</a>
           </div>
         </div>
       </div>
@@ -203,7 +203,28 @@
 
     <hr class="my-10">
 
-    <div class="text-xl text-center">優惠價格評估</div>
+    <a name="calc"></a>
+    <div class="text-xl text-center">優惠價格試算</div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-1">
+      <table class="border-collapse border border-blue-600 table-auto mt-5">
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th class="p-2 border border-blue-500"></th>
+            <th class="p-2 border border-blue-500">功能</th>
+            <th class="p-2 border border-blue-500">優惠價</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="p-2 border border-blue-500 text-center"><input type="checkbox" name="" id=""></td>
+            <td class="p-2 border border-blue-500">最新消息</td>
+            <td class="p-2 border border-blue-500 text-right">5,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   {{-- 置底工具 --}}
