@@ -30,6 +30,39 @@ window.switchTheme = () => {
   window.localStorage.theme = theme
 }
 
+window.menu = function() {
+  return {
+    open: false,
+    goto(dom) {
+      if (window.screen.width >= 1024) {
+        const domOffsetTop = document.getElementById(dom).offsetTop
+        const headerOffsetHeight = document.getElementById('header').offsetHeight
+        window.scrollTo({
+          top: domOffsetTop - headerOffsetHeight,
+          left: 0,
+          behavior: 'smooth'
+        })
+      } else {
+        this.open = false
+        this.$nextTick(() => { location.href = '#' + dom })
+      }
+    }
+  }
+}
+
+window.goto1111 = (dom) => {
+  console.log(dom)
+  this.open = false
+  // const domOffsetTop = document.getElementById(dom).offsetTop
+  // const headerOffsetHeight = window.screen.width >= 1024 ? document.getElementById('header').offsetHeight : 0
+  // document.getElementById(dom).scrollIntoView(true)
+  // window.scrollTo({
+  //   top: domOffsetTop - headerOffsetHeight,
+  //   left: 0,
+  //   behavior: 'smooth'
+  // })
+}
+
 (function() {
   if (theme === 'dark') {
     let htmlClasses = document.querySelector('html').classList

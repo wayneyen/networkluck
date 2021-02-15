@@ -12,8 +12,8 @@
 
 <body class="text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
   {{-- 導航條 --}}
-  <header class="fixed w-full bg-white dark:bg-gray-800 z-40 left-0 top-0">
-    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+  <header id="header" class="static lg:fixed w-full bg-white dark:bg-gray-800 z-40 left-0 top-0">
+    <div x-data="menu()" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
       <div class="py-6 flex flex-row items-center justify-between">
         <a href="{{ route('index') }}" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white focus:outline-none">
           <img src="/images/slogo.svg" class="inline-block h-8 mr-2" alt="{{ config('app.name') }}">
@@ -25,7 +25,7 @@
         </button>
       </div>
       <nav :class="{ 'flex': open, 'hidden': !open }" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-        <a href="#service" class="nav-item" @click="open = false">服務優勢</a>
+        <a href="javascript: void(0)" class="nav-item" @click="goto('service')">服務優勢</a>
         <a href="#case" class="nav-item" @click="open = false">精選案例</a>
         <a href="#" class="nav-item" @click="open = false">優惠價格</a>
         <a href="#" class="nav-item" @click="open = false">聯絡我們</a>
@@ -34,7 +34,7 @@
   </header>
 
   {{-- Banner --}}
-  <section class="mt-20 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-700">
+  <section id="banner" class="lg:mt-20 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-700">
     <div class="max-w-screen-lg relative mx-auto px-6 py-10">
       <div class="text-sm md:text-base lg:text-lg">
           對於社會消費結構的快速變遷以及世界潮流迅速的變化，{{ config('app.name') }}擁有動察先機的獨到想法及一雙觀察敏睿的雙眼，可以精準的分析出您所需的資訊，給予您適當的建議，我們喜愛結交朋友，我們彼此可以隻是聊聊天、交流交流國際觀、亦可以互相交換資源，很高興認識您。
@@ -44,9 +44,9 @@
   </section>
 
   {{-- 服務優勢 --}}
-  <a name="service" class="block pb-20"></a>
-  <section class="max-w-screen-lg mx-auto p-4">
-    <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold mb-10">
+  <a name="service"></a>
+  <section id="service" class="max-w-screen-lg mx-auto p-4">
+    <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold my-10">
       <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運服務優勢
     </div>
 
