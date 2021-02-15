@@ -27,7 +27,7 @@
       <nav :class="{ 'flex': open, 'hidden': !open }" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
         <a href="javascript: void(0)" class="nav-item" @click="goto('service')">服務優勢</a>
         <a href="javascript: void(0)" class="nav-item" @click="goto('case')">精選案例</a>
-        <a href="javascript: void(0)" class="nav-item" @click="open = false">優惠價格</a>
+        <a href="javascript: void(0)" class="nav-item" @click="goto('price')">優惠價格</a>
         <a href="javascript: void(0)" class="nav-item" @click="open = false">聯絡我們</a>
       </nav>
     </div>
@@ -118,7 +118,7 @@
 
       <hr>
 
-      <div class="text-2xl text-center my-10">其他精選案例</div>
+      <div class="text-xl text-center my-10">其他精選案例</div>
 
       <div x-data="mycase()" class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
         <template x-for="(item, index) in cases" :key="index">
@@ -131,9 +131,86 @@
     </div>
   </section>
 
+  {{-- 優惠價格 --}}
+  <a name="price"></a>
+  <section id="price" class="max-w-screen-lg mx-auto px-4 py-12">
+    <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold pb-12">
+      <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運優惠價格
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div>
+        <div class="mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
+          <div class="px-4 py-8 text-blue-600">
+            <h3 class="mx-auto font-semibold text-center underline leading-relaxed">
+              基礎型
+            </h3>
+            <p class="text-3xl font-bold text-center mt-3">
+              $15,000 元起
+            </p>
+          </div>
+          <div class="bg-blue-500 text-white pl-8 py-6 ">
+            <ul class="list-disc list-inside">
+              <li>RWD 一頁式動態網站設計</li>
+              <li>聯絡表單及管理</li>
+              <li>網站管理後台</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="rounded-lg bg-blue-500 w-full shadow-lg overflow-hidden">
+          <div class="px-4 py-8">
+            <h3 class="mx-auto font-semibold text-center underline leading-relaxed text-white">
+              一般型
+            </h3>
+            <p class="text-3xl font-bold text-center text-white mt-3">
+              $45,000 元起
+            </p>
+          </div>
+
+          <div class="bg-blue-700 text-white pl-8 py-6 ">
+            <ul class="list-disc list-inside">
+              <li>RWD 動態網站設計</li>
+              <li>最新消息頁面及管理</li>
+              <li>文章展示及管理系統</li>
+              <li>服務項目頁面及管理</li>
+              <li>商品展示及管理</li>
+              <li>聯絡表單及管理</li>
+              <li>網站管理後台</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
+          <div class="px-4 py-8 text-blue-600">
+            <h3 class="mx-auto font-semibold text-center underline leading-relaxed">
+              進階型
+            </h3>
+            <p class="text-3xl font-bold text-center mt-3 text-red-400">
+              價格優惠中
+            </p>
+          </div>
+          <div class="bg-blue-500 text-white py-6 text-center">
+            <a href="#" class="text-2xl inline-block text-red-100">查看詳細優惠</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-10">
+
+    <div class="text-xl text-center">優惠價格評估</div>
+  </section>
+
+  {{-- 置底工具 --}}
   <div class="fixed right-2 bottom-2 opacity-80">
     <a href="javascript: switchTheme()"><x-heroicon-s-light-bulb id="themeSwitcher" class="text-gray-600 mb-1 w-12 h-12" /></a>
     <a href="#"><x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
+
   </div>
 
   <script src="{{ mix('js/app.js') }}"></script>

@@ -42,6 +42,7 @@ window.menu = () => {
           left: 0,
           behavior: 'smooth'
         })
+        window.history.replaceState('', '', '#' + dom)
       } else {
         this.open = false
         this.$nextTick(() => { location.href = '#' + dom })
@@ -72,14 +73,16 @@ window.mycase = () => {
   }
 }
 
+if (theme === 'dark') {
+  let htmlClasses = document.querySelector('html').classList
+  htmlClasses.add('dark')
+} else {
+  let themeSwitcherClasses = document.getElementById('themeSwitcher').classList
+  themeSwitcherClasses.toggle('text-gray-400')
+  themeSwitcherClasses.toggle('text-yellow-400')
+}
+
 (function() {
-  if (theme === 'dark') {
-    let htmlClasses = document.querySelector('html').classList
-    htmlClasses.add('dark')
-  } else {
-    let themeSwitcherClasses = document.getElementById('themeSwitcher').classList
-    themeSwitcherClasses.toggle('text-gray-400')
-    themeSwitcherClasses.toggle('text-yellow-400')
-  }
+
 })()
 
