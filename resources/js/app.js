@@ -30,7 +30,7 @@ window.switchTheme = () => {
   window.localStorage.theme = theme
 }
 
-window.menu = function() {
+window.menu = () => {
   return {
     open: false,
     goto(dom) {
@@ -50,17 +50,26 @@ window.menu = function() {
   }
 }
 
-window.goto1111 = (dom) => {
-  console.log(dom)
-  this.open = false
-  // const domOffsetTop = document.getElementById(dom).offsetTop
-  // const headerOffsetHeight = window.screen.width >= 1024 ? document.getElementById('header').offsetHeight : 0
-  // document.getElementById(dom).scrollIntoView(true)
-  // window.scrollTo({
-  //   top: domOffsetTop - headerOffsetHeight,
-  //   left: 0,
-  //   behavior: 'smooth'
-  // })
+window.mycase = () => {
+  return {
+    cases: [
+      { name: '凡豆伴', img: '/images/fandou.png', href: 'javascript: void(0)', target: '_self' },
+      { name: '仕達威', img: '/images/shidawei.png', href: 'javascript: void(0)', target: '_self' },
+      { name: '先天下', img: '/images/goldfish.png', href: 'javascript: void(0)', target: '_self' },
+      { name: '文湖寶翠', img: '/images/web33.jpg', href: 'https://www.bestwonhu.com/', target: '_blank' },
+      { name: 'ELBAMOTOR', img: '/images/web36.jpg', href: 'https://www.elba-union.com/', target: '_blank' },
+      { name: '麗晶診所', img: '/images/web23.jpg', href: 'https://www.regentbeauty.com.tw/', target: '_blank' },
+      { name: '研醫明美學', img: '/images/web24.jpg', href: 'https://www.yanyim.com/', target: '_blank' },
+      { name: '朱冠州皮膚科', img: '/images/web28.jpg', href: 'javascript: void(0)', target: '_self' },
+      { name: '微笑特攻隊', img: '/images/web06.jpg', href: 'javascript: void(0)', target: '_self' },
+      { name: 'Iseeyou 摩力無限', img: '/images/web25.jpg', href: 'javascript: void(0)', target: '_self' },
+      { name: '安泰眼科', img: '/images/web43.jpg', href: 'http://www.entie.com.tw/', target: '_blank' },
+      { name: '長青牙醫聯盟', img: '/images/web38.jpg', href: 'javascript: void(0)', target: '_self' },
+      { name: '渔夫之宝', img: '/images/web17.jpg', href: 'javascript: void(0)', target: '_self' },
+      { name: '英特有限公司', img: '/images/web55.jpg', href: 'javascript: void(0)', target: '_self' },
+      { name: '創業大道加盟', img: '/images/web60.jpg', href: 'javascript: void(0)', target: '_self' }
+    ]
+  }
 }
 
 (function() {

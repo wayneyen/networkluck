@@ -26,9 +26,9 @@
       </div>
       <nav :class="{ 'flex': open, 'hidden': !open }" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
         <a href="javascript: void(0)" class="nav-item" @click="goto('service')">服務優勢</a>
-        <a href="#case" class="nav-item" @click="open = false">精選案例</a>
-        <a href="#" class="nav-item" @click="open = false">優惠價格</a>
-        <a href="#" class="nav-item" @click="open = false">聯絡我們</a>
+        <a href="javascript: void(0)" class="nav-item" @click="goto('case')">精選案例</a>
+        <a href="javascript: void(0)" class="nav-item" @click="open = false">優惠價格</a>
+        <a href="javascript: void(0)" class="nav-item" @click="open = false">聯絡我們</a>
       </nav>
     </div>
   </header>
@@ -45,7 +45,7 @@
 
   {{-- 服務優勢 --}}
   <a name="service"></a>
-  <section id="service" class="max-w-screen-lg mx-auto p-4">
+  <section id="service" class="max-w-screen-lg mx-auto p-4 pb-12">
     <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold my-10">
       <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運服務優勢
     </div>
@@ -71,31 +71,33 @@
   </section>
 
   {{-- 精選案例 --}}
-  <a name="case" class="block pb-20"></a>
-  <section class="bg-gray-100 dark:bg-gray-600 p-4">
-    <div class="max-w-screen-lg mx-auto py-12 px-4">
+  <a name="case"></a>
+  <section id="case" class="bg-gray-100 dark:bg-gray-400 p-4">
+    <div class="max-w-screen-lg mx-auto py-12">
       <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold">
         <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 網壕運精選案例
       </div>
 
       <div class="my-10">
         <img src="/images/sketch.png" class="w-full" alt="草圖">
-        <img src="/images/sketch-logo.png" class="w-32 mx-auto my-3" alt="草圖">
+        <img src="/images/sketch-logo.png" class="w-32 mx-auto my-3 mb-6" alt="草圖">
         <div class="hidden sm:block">
-          <p class="font-medium">草圖網歡迎各種創作類型的設計師上架自已的創作作品，對於設計師而言我們是0風險0成本的品牌孵化平臺，每賣出一件您的創作商品即能得到實際的現金收益，草圖網是自有生産資源，完完全全確保用戶收到的商品品質會得到有效保障，相對於隻有前端操作冇有後臺服務管理的APP，草圖的B2B體係更加的豐滿，對於創作者及消費者都是一種非常便利選購及購買的平臺。</p>
-          <a href="#" class="text-red-500 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
+          <p class="font-medium dark:text-white">草圖網歡迎各種創作類型的設計師上架自已的創作作品，對於設計師而言我們是0風險0成本的品牌孵化平臺，每賣出一件您的創作商品即能得到實際的現金收益，草圖網是自有生産資源，完完全全確保用戶收到的商品品質會得到有效保障，相對於隻有前端操作冇有後臺服務管理的APP，草圖的B2B體係更加的豐滿，對於創作者及消費者都是一種非常便利選購及購買的平臺。</p>
+          <a href="#" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
         </div>
       </div>
 
       <hr>
 
       <div class="my-10">
-        <img src="/images/weiziding.png" class="w-full" alt="微自定">
-        <img src="/images/weiziding-logo.png" class="w-32 mx-auto my-3" alt="微自定">
+        <a href="https://sketch.4family.co" target="_blank">
+          <img src="/images/weiziding.png" class="w-full" alt="微自定">
+          <img src="/images/weiziding-logo.png" class="w-32 mx-auto my-3 mb-6" alt="微自定">
+        </a>
         <div class="hidden sm:block">
-          <p class="font-medium">微自定線上附帶下單鏈接的平臺，公司自有生産線，屬於你的加工廠。高分辨率的手機殼DIY印錶機，智能印刷。實現計算機數據輸出到機器上，直接把彩色圖案在你的物品上噴印。</p>
-          <p class="font-medium">代理合作流程:客服1V1對接→申請成為代理→諮詢獲取資料 →開始出售→自行下單→完成 0加盟門檻、0代理費、0庫存</p>
-          <a href="#" class="text-red-500 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
+          <p class="font-medium dark:text-white">微自定線上附帶下單鏈接的平臺，公司自有生産線，屬於你的加工廠。高分辨率的手機殼DIY印錶機，智能印刷。實現計算機數據輸出到機器上，直接把彩色圖案在你的物品上噴印。</p>
+          <p class="font-medium dark:text-white">代理合作流程:客服1V1對接→申請成為代理→諮詢獲取資料 →開始出售→自行下單→完成 0加盟門檻、0代理費、0庫存</p>
+          <a href="https://sketch.4family.co" target="_blank" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
         </div>
       </div>
 
@@ -103,25 +105,34 @@
 
       <div class="my-10">
         <img src="/images/pixxeon.png" class="w-full" alt="PIXXEON">
-        <img src="/images/pixxeon-logo.png" class="w-32 mx-auto my-3" alt="PIXXEON">
+        <img src="/images/pixxeon-logo.png" class="w-32 mx-auto my-3 mb-6" alt="PIXXEON">
         <div class="hidden sm:block">
-          <p class="font-medium">If you have the customers or fans, we have the solution to help your brand flourish. We've created a manufacturing and supply chain management solution so you don't have to. We've also created a sleek and intuitive online and mobile supported platform with an API that allows your fans and customers to place orders from your website.</p>
+          <p class="font-medium dark:text-white">If you have the customers or fans, we have the solution to help your brand flourish. We've created a manufacturing and supply chain management solution so you don't have to. We've also created a sleek and intuitive online and mobile supported platform with an API that allows your fans and customers to place orders from your website.</p>
           <p>&nbsp;</p>
-          <p class="font-medium">Pixxeon's API works in the backround for you. So what is it doing?​Your website will now have an online store to place orders from.​You can decide which items are for sale or customers can upload custom designs, fan art or both! You decide and we provide.​Our platform connects you to the best possible shipping routes and our manufacturing headquarters in beautiful Shenzhen China, where we personally oversee strict quality controls on every single order. This is all behind the scenes so you don't have to worry about a thing.</p>
+          <p class="font-medium dark:text-white">Pixxeon's API works in the backround for you. So what is it doing?​Your website will now have an online store to place orders from.​You can decide which items are for sale or customers can upload custom designs, fan art or both! You decide and we provide.​Our platform connects you to the best possible shipping routes and our manufacturing headquarters in beautiful Shenzhen China, where we personally oversee strict quality controls on every single order. This is all behind the scenes so you don't have to worry about a thing.</p>
           <p>&nbsp;</p>
-          <p class="font-medium">Now that you have the highest quality manufacturing, the fastest shipping and most intuitive platform , all YOU need, is to let fans and customers know you're open for business!</p>
-          <a href="#" class="text-red-500 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
+          <p class="font-medium dark:text-white">Now that you have the highest quality manufacturing, the fastest shipping and most intuitive platform , all YOU need, is to let fans and customers know you're open for business!</p>
+          <a href="#" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
         </div>
       </div>
 
       <hr>
 
-      <div class="text-center my-5">其他精選案例</div>
+      <div class="text-2xl text-center my-10">其他精選案例</div>
+
+      <div x-data="mycase()" class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
+        <template x-for="(item, index) in cases" :key="index">
+          <a :href="item.href" :target="item.target" class="relative">
+            <img :src="item.img" class="w-full" :alt="item.name">
+            <div x-text="item.name" class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center lg:py-4"></div>
+          </a>
+        </template>
+      </div>
     </div>
   </section>
 
   <div class="fixed right-2 bottom-2 opacity-80">
-    <a href="javascript: switchTheme()"><x-heroicon-s-light-bulb id="themeSwitcher" class="text-gray-400 mb-1 w-12 h-12" /></a>
+    <a href="javascript: switchTheme()"><x-heroicon-s-light-bulb id="themeSwitcher" class="text-gray-600 mb-1 w-12 h-12" /></a>
     <a href="#"><x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
   </div>
 
