@@ -31,6 +31,8 @@ module.exports = {
         { name: '文章系統', price: 5000 },
         { name: '服務項目', price: 5000 },
         { name: '商品展示', price: 5000 },
+        { name: '購物車', price: 5000 },
+        { name: '聯絡表單', price: 5000 },
       ]
     }
   }
