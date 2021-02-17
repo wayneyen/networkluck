@@ -13,8 +13,9 @@ require("mix-tailwindcss");
  */
 
 mix
-.js("resources/js/app.js", "public/js")
-.sass("resources/sass/app.scss", "public/css")
+  .js("resources/js/app.js", "public/js")
+  .vue()
+  .sass("resources/sass/app.scss", "public/css")
   .tailwind()
   .options({
     postCss: [require("autoprefixer")],

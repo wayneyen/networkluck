@@ -188,7 +188,7 @@
         <div class="lg:mt-4 rounded-lg bg-blue-100 w-full shadow-lg overflow-hidden h-auto">
           <div class="px-4 py-8 text-blue-600">
             <h3 class="mx-auto font-semibold text-center underline leading-relaxed">
-              進階型
+              客製型
             </h3>
             <p class="text-3xl font-bold text-center mt-3 text-yellow-500	">
               價格優惠中
@@ -204,34 +204,18 @@
     <hr class="my-10">
 
     <a name="calc"></a>
-    <div class="text-xl text-center">優惠價格試算</div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-1">
-      <table class="border-collapse border border-blue-600 table-auto mt-5">
-        <thead>
-          <tr class="bg-blue-600 text-white">
-            <th class="p-2 border border-blue-500"></th>
-            <th class="p-2 border border-blue-500">功能</th>
-            <th class="p-2 border border-blue-500">優惠價</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td class="p-2 border border-blue-500 text-center"><input type="checkbox" name="" id=""></td>
-            <td class="p-2 border border-blue-500">最新消息</td>
-            <td class="p-2 border border-blue-500 text-right">5,000</td>
-          </tr>
-        </tbody>
-      </table>
+    <div id="price">
+      <div class="text-xl text-center">優惠價格試算</div>
+      <price-table></price-table>
     </div>
   </section>
+
+  <footer class="h-40">Footer</footer>
 
   {{-- 置底工具 --}}
   <div class="fixed right-2 bottom-2 opacity-80">
     <a href="javascript: switchTheme()"><x-heroicon-s-light-bulb id="themeSwitcher" class="text-gray-600 mb-1 w-12 h-12" /></a>
     <a href="#"><x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
-
   </div>
 
   <script src="{{ mix('js/app.js') }}"></script>

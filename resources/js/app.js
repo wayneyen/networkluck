@@ -1,6 +1,14 @@
 require('./bootstrap')
 import 'alpinejs'
 
+import { createApp } from 'vue'
+import PriceTable from './components/price-table.vue'
+createApp({
+  components: {
+    PriceTable: PriceTable
+  }
+}).mount('#price')
+
 // setup theme
 var theme = window.localStorage.theme
 
