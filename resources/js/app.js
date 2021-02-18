@@ -1,6 +1,7 @@
 require("./bootstrap");
 import "alpinejs";
 import { createApp } from "vue";
+import VueNumberFormat from "vue-number-format";
 import PriceTable from "./components/price-table.vue";
 
 /*** 設定主題 ***/
@@ -169,10 +170,12 @@ window.mycase = () => {
 };
 
 /*** 試算價格 ***/
-createApp({
+const app = createApp({
   components: {
     PriceTable: PriceTable,
   },
-}).mount("#price");
+});
+app.use(VueNumberFormat);
+app.mount("#price");
 
 (function () {})();
