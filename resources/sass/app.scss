@@ -28,3 +28,8 @@ html {
   background-image: url('/images/banner-bg.png');
   @apply bg-cover;
 }
+
+.grecaptcha-badge {
+  @apply mx-auto mb-4;
+  position: static !important;
+}

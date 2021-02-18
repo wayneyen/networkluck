@@ -8,8 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdyB10aAAAAALiwyPxxoWgd1IkZFF04uVMTwJP5"></script>
 </head>
-
 <body class="text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
   {{-- 導航條 --}}
   <header id="header" class="static lg:fixed w-full bg-white dark:bg-gray-800 z-40 left-0 top-0">
@@ -28,7 +28,7 @@
         <a href="javascript: void(0)" class="nav-item" @click="goto('service')">服務優勢</a>
         <a href="javascript: void(0)" class="nav-item" @click="goto('case')">精選案例</a>
         <a href="javascript: void(0)" class="nav-item" @click="goto('price')">優惠價格</a>
-        <a href="javascript: void(0)" class="nav-item" @click="open = false">聯絡我們</a>
+        <a href="javascript: void(0)" class="nav-item" @click="goto('contact')">聯絡我們</a>
       </nav>
     </div>
   </header>
@@ -210,10 +210,71 @@
     </div>
   </section>
 
+  {{-- 聯絡我們 --}}
+  <a name="contact"></a>
+  <section id="contact" class="max-w-screen-md mx-auto px-4 py-12">
+    <div class="flex items-center justify-start lg:justify-center text-2xl font-semibold pb-12">
+      <x-heroicon-o-code class="w-10 h-10 mr-2 text-red-600" /> 聯絡網壕運
+    </div>
+
+    <p class="text-center text-red-400">請至少填入一種聯絡方式</p>
+
+    <form id="contact-form">
+      <label class="block mt-4">
+        <span class="text-lg">稱呼</span>
+        <input type="text" name="name" class="mt-1 block w-full rounded-md text-gray-800 bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="請輸入您的稱呼">
+      </label>
+
+      <label class="block mt-4">
+        <span class="text-lg">手機號碼</span>
+        <input type="text" name="mobile" class="mt-1 block w-full rounded-md text-gray-800 bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="請輸入您的手機號碼">
+      </label>
+
+      <label class="block mt-4">
+        <span class="text-lg">Email</span>
+        <input type="text" name="email" class="mt-1 block w-full rounded-md text-gray-800 bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="請輸入您的Email">
+      </label>
+
+      <label class="block mt-4">
+        <span class="text-lg">其他聯絡方式</span>
+        <input type="text" name="contact" class="mt-1 block w-full rounded-md text-gray-800 bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="請輸入您其他聯絡方式：FB、Line 等等">
+      </label>
+
+      <div class="mt-4">
+        <span class="text-lg block">方便聯絡時間：</span>
+        <div class="flex mt-1">
+          <label class="flex items-center">
+            <input type="radio" name="time" checked class="bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500 mr-1" value="全天"> 全天
+          </label>
+          <label class="flex items-center pl-4">
+            <input type="radio" name="time" class="bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500 mr-1" value="早上"> 早上
+          </label>
+          <label class="flex items-center pl-4">
+            <input type="radio" name="time" class="bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500 mr-1" value="下午"> 下午
+          </label>
+          <label class="flex items-center pl-4">
+            <input type="radio" name="time" class="bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500 mr-1" value="晚上"> 晚上
+          </label>
+        </div>
+      </div>
+
+      <label class="block mt-4 mb-6">
+        <span class="text-lg">需求內容</span>
+        <textarea name="memo" class="mt-1 block w-full rounded-md text-gray-800 bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="5"></textarea>
+      </label>
+
+      <div class="text-center">
+        <button type="button" id="contact-submit" onclick="contactSubmit(event)"
+          class="py-2 px-8 bg-transparent text-blue-600 dark:text-blue-300 font-semibold border border-blue-600 dark:border-blue-300 rounded hover:bg-blue-600 hover:text-white dark:hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
+        >送出</button>
+      </div>
+    </form>
+  </section>
+
   <footer class="h-40">Footer</footer>
 
   {{-- 置底工具 --}}
-  <div class="fixed right-2 bottom-2 opacity-80">
+  <div class="fixed right-2 bottom-4 opacity-80">
     <a href="javascript: switchTheme()"><x-heroicon-s-light-bulb id="themeSwitcher" class="text-gray-600 mb-1 w-12 h-12" /></a>
     <a href="#"><x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
   </div>

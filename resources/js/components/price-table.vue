@@ -63,6 +63,7 @@ module.exports = {
         { name: '商品展示', price: 10000 },
         { name: '購物車', price: 15000 },
         { name: '聯絡表單', price: 3000 },
+        { name: '小程序設計', price: 50000 },
       ],
       selectedIndexes: []
     }

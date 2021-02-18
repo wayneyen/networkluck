@@ -3,6 +3,7 @@ import "alpinejs";
 import { createApp } from "vue";
 import VueNumberFormat from "vue-number-format";
 import PriceTable from "./components/price-table.vue";
+import { serialize } from 'form-serialization';
 
 /*** 設定主題 ***/
 var theme = window.localStorage.theme;
@@ -177,5 +178,33 @@ const app = createApp({
 });
 app.use(VueNumberFormat);
 app.mount("#price");
+
+/*** 機器人驗證 ***/
+window.contactSubmit = function(e) {
+  console.log(e.target)
+
+  const contactSubmit = document.getElementById('contact-submit')
+  contactSubmit.classList.add('disabled')
+  e.target.disabled = true
+  return
+  e.preventDefault()
+
+  const form = document.querySelector('#contact-form');
+  const obj = serialize(form, {hash: true});
+
+  grecaptcha.ready(function () {
+    grecaptcha
+      .execute('6LdyB10aAAAAALiwyPxxoWgd1IkZFF04uVMTwJP5', { action: "submit" })
+      .then(function (token) {
+        axios.post('/api/send', { ...obj, token: token })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      });
+  });
+};
 
 (function () {})();
