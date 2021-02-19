@@ -11,7 +11,7 @@ class SendController extends Controller
     public function send(Request $request)
     {
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptcha_secret = '6LdyB10aAAAAAAs33GjSHTAaUnG03M0arhe-Ld-D';
+        $recaptcha_secret = env('RECAPTCHA_SECRET');
 
         // Make and decode POST request:
         $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $request->token);

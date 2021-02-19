@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdyB10aAAAAALiwyPxxoWgd1IkZFF04uVMTwJP5"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_KEY') }}"></script>
 </head>
 <body class="text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
   {{-- 導航條 --}}
@@ -280,5 +280,31 @@
   </div>
 
   <script src="{{ mix('js/app.js') }}"></script>
+
+  <script>
+  /*** 機器人驗證 ***/
+  function contactSubmit(e) {
+    const contactSubmit = document.getElementById('contact-submit')
+    e.target.disabled = true
+    e.preventDefault()
+
+    const form = document.querySelector('#contact-form')
+    const obj = serialize(form, {hash: true})
+
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute('{{ env('RECAPTCHA_KEY') }}', { action: "submit" })
+        .then(function (token) {
+          axios.post('/api/send', { ...obj, token: token })
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+        })
+    })
+  }
+  </script>
 </body>
 </html>
