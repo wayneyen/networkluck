@@ -1,9 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '../../node_modules/sal.js/dist/sal.css';
 
 html {
   scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 .nav-item {
@@ -24,12 +29,11 @@ html {
     focus:outline-none;
 }
 
-.banner {
-  background-image: url('/images/banner-bg.png');
-  @apply bg-cover;
-}
-
 .grecaptcha-badge {
   @apply mx-auto mb-4;
-  position: static !important;
+  bottom: 120px !important;
+}
+
+.footer-inner {
+  background-image: url(/images/footer.png);
 }

@@ -4,7 +4,11 @@ import { createApp } from "vue";
 import VueNumberFormat from "vue-number-format";
 import PriceTable from "./components/price-table.vue";
 import { serialize } from 'form-serialization';
+import Swal from 'sweetalert2';
+import sal from 'sal.js';
+
 window.serialize = serialize;
+window.Swal = Swal;
 
 /*** 設定主題 ***/
 var theme = window.localStorage.theme;
@@ -77,6 +81,12 @@ window.menu = () => {
 window.mycase = () => {
   return {
     cases: [
+      {
+        name: "心福田承佛寶塔",
+        img: "/images/xinfutian.jpg",
+        href: "https://xinfutian.life/",
+        target: "_blank",
+      },
       {
         name: "凡豆伴",
         img: "/images/fandou.png",
@@ -179,5 +189,7 @@ const app = createApp({
 });
 app.use(VueNumberFormat);
 app.mount("#price");
+
+sal();
 
 (function () {})();

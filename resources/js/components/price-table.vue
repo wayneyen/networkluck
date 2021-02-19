@@ -26,12 +26,12 @@
       </table>
 
       <fieldset class="mt-5">
-        <legend class="bg-gray-500 text-white w-full text-center">
+        <legend class="bg-gray-500 text-white w-full text-center py-4">
           估算結果 ( {{ selectedItems.length }} 個項目 )
         </legend>
         <div class="grid grid-cols-3">
           <template v-for="(item, index) in selectedItems" :key="index">
-            <div class="col-span-2 text-right pt-1">{{ item.name }}</div>
+            <div class="col-span-2 text-right py-1 first:pt-2">{{ item.name }}</div>
             <div class="text-right pt-1">{{ vueNumberFormat(item.price, numberOptions) }}</div>
           </template>
         </div>
