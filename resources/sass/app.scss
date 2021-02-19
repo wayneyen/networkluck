@@ -30,8 +30,7 @@ html, body {
 }
 
 .grecaptcha-badge {
-  @apply mx-auto mb-4;
-  bottom: 120px !important;
+  display: none !important;
 }
 
 .footer-inner {
