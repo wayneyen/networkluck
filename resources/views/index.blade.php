@@ -9,7 +9,7 @@
   <meta property="og:url" content="{{ config('app.url') }}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ config('app.name') }}" />
-  <meta property="og:image" content="/image/slogo.svg" />
+  <meta property="og:image" content="/image/banner.png" />
   <meta property="og:description" content="對於社會消費結構的快速變遷以及世界潮流迅速的變化，{{ config('app.name') }}擁有動察先機的獨到想法及一雙觀察敏睿的雙眼，可以精準的分析出您所需的資訊，給予您適當的建議，我們喜愛結交朋友，我們彼此可以隻是聊聊天、交流交流國際觀、亦可以互相交換資源，很高興認識您。"/>
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
