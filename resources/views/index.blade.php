@@ -106,14 +106,14 @@
           <p class="font-medium dark:text-white">
             草圖網歡迎各種創作類型的設計師上架自已的創作作品，對於設計師而言我們是0風險0成本的品牌孵化平臺，每賣出一件您的創作商品即能得到實際的現金收益，草圖網是自有生産資源，完完全全確保用戶收到的商品品質會得到有效保障，相對於隻有前端操作冇有後臺服務管理的APP，草圖的B2B體係更加的豐滿，對於創作者及消費者都是一種非常便利選購及購買的平臺。
           </p>
-          <a href="#" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
+          {{-- <a href="#" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a> --}}
         </div>
       </div>
 
       <hr>
 
       <div data-sal="fade" class="my-10">
-        <a href="https://sketch.4family.co" target="_blank" rel="noreferrer noopener">
+        <a href="https://sketch.4family.co" target="_blank" rel="noopener">
           <img src="/images/weiziding.png" class="w-full" alt="微自定">
           <img src="/images/weiziding-logo.png" class="w-32 mx-auto my-3 mb-6" alt="微自定">
         </a>
@@ -121,7 +121,7 @@
           <p class="font-medium dark:text-white">
             微自定線上附帶下單鏈接的平臺，公司自有生産線，屬於你的加工廠。高分辨率的手機殼DIY印錶機，智能印刷。實現計算機數據輸出到機器上，直接把彩色圖案在你的物品上噴印。</p>
           <p class="font-medium dark:text-white">代理合作流程:客服1V1對接→申請成為代理→諮詢獲取資料 →開始出售→自行下單→完成 0加盟門檻、0代理費、0庫存</p>
-          <a href="https://sketch.4family.co" target="_blank" rel="noreferrer noopener"
+          <a href="https://sketch.4family.co" target="_blank" rel="noopener"
             class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
         </div>
       </div>
@@ -147,7 +147,7 @@
           <p class="font-medium dark:text-white">Now that you have the highest quality manufacturing, the fastest
             shipping and most intuitive platform , all YOU need, is to let fans and customers know you're open for
             business!</p>
-          <a href="#" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a>
+          {{-- <a href="#" class="text-red-500 dark:text-red-600 text-lg font-semibold mt-4 block text-center">詳情進入 ></a> --}}
         </div>
       </div>
 
@@ -157,7 +157,7 @@
 
       <div x-data="mycase()" class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
         <template x-for="(item, index) in cases" :key="index">
-          <a :href="item.href" :target="item.target" class="relative" rel="noreferrer noopener">
+          <a :href="item.href" :target="item.target" class="relative" rel="noopener">
             <img :src="item.img" class="w-full" :alt="item.name">
             <div x-text="item.name"
               class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center lg:py-4"></div>
