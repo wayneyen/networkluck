@@ -14,6 +14,16 @@
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_KEY') }}"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVDZJZP6J1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KVDZJZP6J1');
+  </script>
 </head>
 
 <body class="text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
