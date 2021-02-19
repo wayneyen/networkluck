@@ -13,7 +13,7 @@ window.Swal = Swal;
 /*** 設定主題 ***/
 var theme = window.localStorage.theme;
 
-if (theme === "") {
+if (!theme) {
   if (
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -24,7 +24,9 @@ if (theme === "") {
   }
 }
 
-if (theme === "dark") {
+window.localStorage.theme = theme
+
+if (theme == "dark") {
   let htmlClasses = document.querySelector("html").classList;
   htmlClasses.add("dark");
 } else {
@@ -43,9 +45,9 @@ window.switchTheme = () => {
   themeSwitcherClasses.toggle("text-gray-400");
   themeSwitcherClasses.toggle("text-yellow-400");
 
-  if (theme === "light") {
+  if (theme == "light") {
     theme = "dark";
-  } else if (theme === "dark") {
+  } else if (theme == "dark") {
     theme = "light";
   }
 
