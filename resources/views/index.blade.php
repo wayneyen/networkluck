@@ -311,16 +311,16 @@
 
   {{-- Footer --}}
   <footer class="text-white bg-gray-500 dark:bg-gray-900 pt-20">
-    <div class="footer-inner pb-20 bg-no-repeat bg-right-bottom bg-contain">
-      <div class="max-w-screen-md mx-auto grid grid-cols-1 lg:grid-cols-5 lg:gap-4">
+    <div class="footer-inner pb-20 bg-no-repeat bg-right-bottom">
+      <div class="max-w-screen-md mx-auto px-4 grid grid-cols-1 lg:grid-cols-5 gap-4">
         <div class="col-span-1"><img src="/images/qr.jpg" class="w-full"></div>
-        <div class="col-span-4 text-lg">
-          <div class="mt-5">Line: wayway1974</div>
-          <div class="mt-5">Email: wayne@4family.co</div>
+        <div class="col-span-4 text-base">
+          <div class="mt-3">Line: wayway1974</div>
+          <div class="mt-3">Email: wayne@4family.co</div>
         </div>
         <div class="col-span-5 mt-5 text-sm text-gray-200">
           &copy;<?=date('Y')?>
-          {{ env('APP_NAME') }}網站 屬於 {{ env('APP_NAME') }}有限公司所有
+          {{ env('APP_NAME') }}網站<br>屬於 {{ env('APP_NAME') }}有限公司所有
         </div>
       </div>
     </div>
