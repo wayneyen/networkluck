@@ -13,7 +13,7 @@ window.Swal = Swal;
 /*** 設定主題 ***/
 var theme = window.localStorage.theme;
 
-if (!theme) {
+if (!theme || theme == 'undefined') {
   if (
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
