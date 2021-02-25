@@ -349,7 +349,7 @@
       <x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
   </div>
 
-  <script src="{{ mix('js/app.js') }}" defer></script>
+  <script src="{{ mix('js/app.js') }}"></script>
 
   <script>
     /*** 機器人驗證 ***/
