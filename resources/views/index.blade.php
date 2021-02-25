@@ -182,7 +182,7 @@
               基礎型
             </h3>
             <p class="text-3xl font-bold text-center mt-3">
-              $15,000 元起
+              $10,000 元起
             </p>
           </div>
           <div class="bg-blue-500 text-white pl-8 py-6 ">
@@ -202,7 +202,7 @@
               一般型
             </h3>
             <p class="text-3xl font-bold text-center text-white mt-3">
-              $45,000 元起
+              $30,000 元起
             </p>
           </div>
 
@@ -349,7 +349,7 @@
       <x-heroicon-s-arrow-circle-up class="w-12 h-12" /></a>
   </div>
 
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ mix('js/app.js') }}" defer></script>
 
   <script>
     /*** 機器人驗證 ***/

@@ -1,5 +1,6 @@
 const mix = require("laravel-mix");
 require("mix-tailwindcss");
+require("webpack");
 
 /*
  |--------------------------------------------------------------------------
